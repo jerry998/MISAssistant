@@ -1,0 +1,37 @@
+﻿/* Mouse 在 Table 移動時, 整列變色*/
+.table tbody tr:hover td, .table tbody tr:hover th {
+    background-color: gainsboro;
+}
+
+table {
+    width: 100%;
+}
+
+thead, tbody, tr, td, th {
+    display: block;
+}
+
+tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+thead th {
+    height: 30px;
+}
+
+tbody {
+    height: 360px;
+    overflow-y: auto;
+}
+
+thead {
+
+}
+
+tbody td, thead th {
+    width: 10%;
+    float: left;
+}
