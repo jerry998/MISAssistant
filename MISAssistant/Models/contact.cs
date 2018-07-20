@@ -11,22 +11,15 @@ namespace MISAssistant.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class contact
     {
         public int id { get; set; }
-
         public string department { get; set; }
-
         public string name { get; set; }
-
         public string tel_office { get; set; }
-
         public string tel_ext { get; set; }
-
         public string tel_mobile { get; set; }
-
         public string note { get; set; }
     }
 }

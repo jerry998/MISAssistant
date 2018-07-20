@@ -63,16 +63,16 @@
                     @Html.DisplayFor(modelItem => item.ip)&nbsp;
                 </td>
                 <td style="color:black;font-weight:bold">
-                    @Html.DisplayFor(modelItem => item.cartridge_black)&nbsp;
+                    @Html.ActionLink(" " + item.cartridge_black + " ", "_Details", "cart_transaction", new { printer_id=item.id, cartridge = item.cartridge_black, color = "black" }, new { data_target = "#cartModal", data_toggle = "modal", @style = "color:black;font-weight:bold" })&nbsp;
                 </td>
                 <td style="color:deepskyblue;font-weight:bold">
-                    @Html.DisplayFor(modelItem => item.cartridge_blue)&nbsp;
+                    @Html.ActionLink(" " + item.cartridge_blue + " ", "_Details", "cart_transaction", new { printer_id = item.id, cartridge = item.cartridge_blue, color = "blue" }, new { data_target = "#cartModal", data_toggle = "modal", @style = "color:blue;font-weight:bold" })&nbsp;
                 </td>
                 <td style="color:red;font-weight:bold">
-                    @Html.DisplayFor(modelItem => item.cartridge_red)&nbsp;
+                    @Html.ActionLink(" " + item.cartridge_red + " ", "_Details", "cart_transaction", new { printer_id = item.id, cartridge = item.cartridge_red, color = "red" }, new { data_target = "#cartModal", data_toggle = "modal", @style = "color:red;font-weight:bold" })&nbsp;
                 </td>
                 <td style="color:orange;font-weight:bold">
-                    @Html.DisplayFor(modelItem => item.cartridge_yellow)&nbsp;
+                    @Html.ActionLink(" " + item.cartridge_yellow + " ", "_Details", "cart_transaction", new { printer_id = item.id, cartridge = item.cartridge_yellow, color = "orange" }, new { data_target = "#cartModal", data_toggle = "modal", @style = "color:orange;font-weight:bold" })&nbsp;
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.note)&nbsp;
@@ -118,6 +118,16 @@
 
 <!-- Delete -->
 <div id="deleteModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+
+<!-- Cart_Transaction -->
+<div id="cartModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->

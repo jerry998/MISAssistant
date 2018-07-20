@@ -164,19 +164,24 @@
           <EntitySet Name="vender" EntityType="Self.vender" />
           <EntitySet Name="cart_transaction" EntityType="mis_assistantModel.cart_transaction" />
           <EntitySet Name="printer" EntityType="mis_assistantModel.printer" />
+          <AssociationSet Name="printercart_transaction" Association="mis_assistantModel.printercart_transaction">
+            <End Role="printer" EntitySet="printer" />
+            <End Role="cart_transaction" EntitySet="cart_transaction" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="cart_transaction">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="printer_id" Type="Int32" />
+          <Property Name="printer_id" Type="Int32" Nullable="false" />
           <Property Name="cartridge" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="price" Type="Int32" />
           <Property Name="quantity" Type="Int32" />
           <Property Name="vender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="in_out" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
           <Property Name="date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="printer" Relationship="mis_assistantModel.printercart_transaction" FromRole="cart_transaction" ToRole="printer" />
         </EntityType>
         <EntityType Name="printer">
           <Key>
@@ -196,7 +201,20 @@
           <Property Name="cartridge_red" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="cartridge_yellow" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="note" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="cart_transaction" Relationship="mis_assistantModel.printercart_transaction" FromRole="printer" ToRole="cart_transaction" />
         </EntityType>
+        <Association Name="printercart_transaction">
+          <End Type="mis_assistantModel.printer" Role="printer" Multiplicity="1" />
+          <End Type="mis_assistantModel.cart_transaction" Role="cart_transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="printer">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="cart_transaction">
+              <PropertyRef Name="printer_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

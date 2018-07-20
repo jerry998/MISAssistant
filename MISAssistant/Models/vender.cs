@@ -11,28 +11,18 @@ namespace MISAssistant.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class vender
     {
         public int id { get; set; }
-
         public string company { get; set; }
-
         public string contact { get; set; }
-
         public string title { get; set; }
-
         public string email { get; set; }
-
         public string tel_office { get; set; }
-
         public string tel_mobile { get; set; }
-
         public string fax { get; set; }
-
         public string quick_no { get; set; }
-
         public string note { get; set; }
     }
 }

@@ -11,24 +11,18 @@ namespace MISAssistant.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class cart_transaction
     {
         public int id { get; set; }
-
-        public Nullable<int> printer_id { get; set; }
-
+        public int printer_id { get; set; }
         public string cartridge { get; set; }
-
         public Nullable<int> price { get; set; }
-
         public Nullable<int> quantity { get; set; }
-
         public string vender { get; set; }
-
         public string in_out { get; set; }
-
         public Nullable<System.DateTime> date { get; set; }
+    
+        public virtual printer printer { get; set; }
     }
 }

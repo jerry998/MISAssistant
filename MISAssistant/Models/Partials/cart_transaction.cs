@@ -31,6 +31,7 @@ namespace MISAssistant.Models
             public string in_out { get; set; }
 
             [DisplayName("日期")]
+            [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}")]
             public Nullable<System.DateTime> date { get; set; }
         }
     }

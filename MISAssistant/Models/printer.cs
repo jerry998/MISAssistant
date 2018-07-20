@@ -11,37 +11,31 @@ namespace MISAssistant.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class printer
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public printer()
+        {
+            this.cart_transaction = new HashSet<cart_transaction>();
+        }
+    
         public int id { get; set; }
-
         public string department { get; set; }
-
         public string brand { get; set; }
-
         public string model { get; set; }
-
         public string type { get; set; }
-
         public string vender { get; set; }
-
         public Nullable<decimal> price { get; set; }
-
         public Nullable<System.DateTime> date { get; set; }
-
         public string ip { get; set; }
-
         public string cartridge_black { get; set; }
-
         public string cartridge_blue { get; set; }
-
         public string cartridge_red { get; set; }
-
         public string cartridge_yellow { get; set; }
-
         public string note { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<cart_transaction> cart_transaction { get; set; }
     }
 }
