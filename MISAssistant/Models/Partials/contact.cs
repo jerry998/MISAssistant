@@ -14,9 +14,11 @@ namespace MISAssistant.Models
         public class contactMD
         {
             [DisplayName("單位")]
+            [Required]
             public string department { get; set; }
 
             [DisplayName("姓名")]
+            [Required]
             public string name { get; set; }
 
             [DisplayName("公司電話")]

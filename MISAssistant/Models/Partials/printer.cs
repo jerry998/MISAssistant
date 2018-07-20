@@ -13,12 +13,15 @@ namespace MISAssistant.Models
         public class printerMD
         {
             [DisplayName("使用單位")]
+            [Required]
             public string department { get; set; }
 
             [DisplayName("廠牌")]
+            [Required]
             public string brand { get; set; }
 
             [DisplayName("型號")]
+            [Required]
             public string model { get; set; }
 
             [DisplayName("類別")]

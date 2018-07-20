@@ -13,9 +13,11 @@ namespace MISAssistant.Models
         public class venderMD
         {
             [DisplayName("公司名稱")]
+            [Required]
             public string company { get; set; }
 
             [DisplayName("聯絡人")]
+            [Required]
             public string contact { get; set; }
 
             [DisplayName("職稱")]

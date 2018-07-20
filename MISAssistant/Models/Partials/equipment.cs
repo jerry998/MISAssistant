@@ -13,9 +13,11 @@ namespace MISAssistant.Models
         public class equipmentMD
         {
             [DisplayName("單位")]
+            [Required]
             public string department { get; set; }
 
             [DisplayName("類別")]
+            [Required]
             public string ftype { get; set; }
 
             [DisplayName("名稱")]
