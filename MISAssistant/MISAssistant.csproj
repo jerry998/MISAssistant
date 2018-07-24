@@ -382,6 +382,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MISAssistantModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <Content Include="images\details_close.png" />
+    <Content Include="images\details_open.png" />
+    <Content Include="images\sort_asc.png" />
+    <Content Include="images\sort_asc_disabled.png" />
+    <Content Include="images\sort_both.png" />
+    <Content Include="images\sort_desc.png" />
+    <Content Include="images\sort_desc_disabled.png" />
     <Content Include="Models\MISAssistantModel.edmx.diagram">
       <DependentUpon>MISAssistantModel.edmx</DependentUpon>
     </Content>

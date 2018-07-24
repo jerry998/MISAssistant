@@ -119,9 +119,10 @@
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-        <div class="form-actions no-color">
-            <button type="submit" class="btn btn-default">刪除</button>
-            @Html.ActionLink("返回", "Index", new { dept = @Html.DisplayFor(model => model.department) }, new { @class = "btn btn-default" })
-        </div>
+    <div class="form-actions no-color">
+        <button type="submit" class="btn btn-default">刪除</button>
+        @*Html.ActionLink("返回", "Index", new { dept = @Html.DisplayFor(model => model.department) }, new { @class = "btn btn-default" }) *@
+        <button type="button" class="btn btn-default" aria-label="Close" data-dismiss="modal">返回</button>
+    </div>
     }
 </div>

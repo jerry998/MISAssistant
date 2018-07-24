@@ -117,5 +117,6 @@
 </div>
 <div class="modal-footer modal-footer-primary">
     @Html.ActionLink("編輯", "_Edit", new { id = @Html.DisplayFor(model => model.id) }, new { @class = "btn btn-default", data_target = "#editModal", data_toggle = "modal" })
-    @Html.ActionLink("返回", "Index", new { dept = @Html.DisplayFor(model => model.department) }, new { @class = "btn btn-default" })
+    @*Html.ActionLink("返回", "Index", new { dept = @Html.DisplayFor(model => model.department) }, new { @class = "btn btn-default" }) *@
+    <button type="button" class="btn btn-default" aria-label="Close" data-dismiss="modal">返回</button>
 </div>

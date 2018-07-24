@@ -15,7 +15,7 @@
 </p>
 <table class="table table-striped" id="head_fixed_Equipments">
     <thead>
-        <tr>
+        <tr style="background-color:white">
             <th style="text-align:center;">
                 @Html.DisplayNameFor(model => model.department)
             </th>
@@ -124,6 +124,7 @@
 @section scripts
 {
     <script>
+        //必須把 Content/DataTables/images 拷貝到 /images ，才能正確顯示符號
         $(document).ready(function () {
             $('#head_fixed_Equipments').DataTable({
                 scrollY: "400px",
@@ -142,6 +143,11 @@
                 ]
 
             });
+        });
+
+        //destroy the Modal object before subsequent toggles. because remote modal shows same content every time
+        $('body').on('hidden.bs.modal', '.modal', function () {
+            $(this).removeData('bs.modal');
         });
     </script>
 }

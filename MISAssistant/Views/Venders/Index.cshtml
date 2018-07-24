@@ -141,5 +141,10 @@
                 ]
             });
         });
+
+        //destroy the Modal object before subsequent toggles. because remote modal shows same content every time
+        $('body').on('hidden.bs.modal', '.modal', function () {
+            $(this).removeData('bs.modal');
+        });
     </script>
 }
