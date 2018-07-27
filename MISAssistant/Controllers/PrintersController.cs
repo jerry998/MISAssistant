@@ -98,6 +98,7 @@ namespace MISAssistant.Controllers
         public ActionResult _Create()
         {
             ViewBag.dept = GetDeptList(Request.QueryString["dept"]);
+            ViewBag.ptype = GetTypeList(Request.QueryString["type"]);
             return PartialView();
         }
 
@@ -160,6 +161,7 @@ namespace MISAssistant.Controllers
                 return HttpNotFound();
             }
             ViewBag.dept = GetDeptList(printer.department);
+            ViewBag.ptype = GetTypeList(printer.type);
             return PartialView(printer);
         }
 
@@ -257,6 +259,15 @@ namespace MISAssistant.Controllers
             selectListItems.Add(new SelectListItem { Text = "傳達室", Value = "傳達室", Selected = (strSelected != "" && strSelected == "傳達室") ? true : false });
             selectListItems.Add(new SelectListItem { Text = "資訊室", Value = "資訊室", Selected = (strSelected != "" && strSelected == "資訊室") ? true : false });
             selectListItems.Add(new SelectListItem { Text = "測量室", Value = "測量室", Selected = (strSelected != "" && strSelected == "測量室") ? true : false });
+            return selectListItems;
+        }
+
+        private List<SelectListItem> GetTypeList(string strSelected  = "")
+        {
+            //類別
+            List<SelectListItem> selectListItems = new List<SelectListItem>();
+            selectListItems.Add(new SelectListItem { Text = "彩色", Value = "彩色", Selected = (strSelected != "" && strSelected == "彩色") ? true : false });
+            selectListItems.Add(new SelectListItem { Text = "黑白", Value = "黑白", Selected = (strSelected != "" && strSelected == "黑白") ? true : false });
             return selectListItems;
         }
 

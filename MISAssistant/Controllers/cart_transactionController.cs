@@ -44,7 +44,7 @@ namespace MISAssistant.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            List<cart_transaction> carts = db.cart_transaction.Where(c => c.printer_id == printer_id ).Where(c => c.cartridge == cartridge ).ToList();
+            List<cart_transaction> carts = db.cart_transaction.Where(c => c.printer_id == printer_id ).Where(c => c.cartridge == cartridge ).OrderBy( c => c.date).ToList();
             ViewBag.color = color;
             if (carts == null)
             {

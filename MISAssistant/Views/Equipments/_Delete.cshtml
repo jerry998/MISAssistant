@@ -120,6 +120,7 @@
     {
         @Html.AntiForgeryToken()
     <div class="form-actions no-color">
+        <span style="font-size:large;font-weight:bold;color:red">確定要刪除嗎？&nbsp;</span>
         <button type="submit" class="btn btn-default">刪除</button>
         @*Html.ActionLink("返回", "Index", new { dept = @Html.DisplayFor(model => model.department) }, new { @class = "btn btn-default" }) *@
         <button type="button" class="btn btn-default" aria-label="Close" data-dismiss="modal">返回</button>
