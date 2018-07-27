@@ -146,5 +146,10 @@
         $('body').on('hidden.bs.modal', '.modal', function () {
             $(this).removeData('bs.modal');
         });
+
+        //make bootstrap twitter dialog modal draggable
+        $(".modal-dialog").draggable({
+            handle: ".modal-header"
+        });
     </script>
 }
